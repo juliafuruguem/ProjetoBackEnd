@@ -1,12 +1,18 @@
-import express from "express";
-import bookRoutes from "./routes/bookRoutes";
+import express from 'express';
+import userRoutes from './routes/userRoutes';
+import authRoutes from './routes/authRoutes';
+import bookRoutes from './routes/bookRoutes';
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use("/books", bookRoutes);
+app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.use(userRoutes);
+app.use(authRoutes);
+app.use(bookRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });

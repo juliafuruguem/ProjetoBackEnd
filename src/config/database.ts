@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 
 const connectionString =
-  "postgresql://backend_ugaz_user:87KlrSzD5GQ0M8KBs5SaJ0bJgGj5112g@dpg-cs2rppbv2p9s738nq950-a.oregon-postgres.render.com/backend_ugaz";
+  "postgresql://postgres:dPSqVmBZVDrGqEUWmEkxbhPkAJScYzbG@autorack.proxy.rlwy.net:46270/railway";
 
 const pool = new Pool({
   connectionString,
@@ -11,3 +11,6 @@ const pool = new Pool({
 });
 
 export default pool;
+
+
+

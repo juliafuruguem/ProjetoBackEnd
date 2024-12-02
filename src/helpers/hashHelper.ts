@@ -7,3 +7,4 @@ export const hashPassword = (password: string): string => {
 export const comparePassword = (password: string, hash: string): boolean => {
   return hashPassword(password) === hash;
 };
+
