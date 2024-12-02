@@ -9,9 +9,8 @@ export class AuthService {
     this.userRepository = new UserRepository();
   }
 
-  // Método de registro de usuário
   async registerUser(name: string, email: string, password: string) {
-    const passwordhash = await hashPassword(password);  // Usando hash assíncrono
+    const passwordhash = await hashPassword(password); 
     console.log("Senha original:", password); 
     console.log("Hash gerado:", passwordhash);
     const user = await this.userRepository.addUser(name, email, passwordhash);
@@ -19,7 +18,6 @@ export class AuthService {
     return user;
   }
 
-  // Método de login de usuário
   async loginUser(email: string, password: string) {
     const user = await this.userRepository.getUserByEmail(email);
     if (!user) throw new Error('Usuário não encontrado');
